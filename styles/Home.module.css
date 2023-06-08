@@ -1,10 +1,111 @@
+.bg {
+  @apply bg-gradient-to-br from-black via-gray-900 to-cyan-900 absolute opacity-95;
+  height: 100vh;
+  width: 100vw;
+}
+
 .main {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  padding: 6rem;
-  min-height: 100vh;
+  @apply text-white h-screen w-screen grid grid-cols-4 grid-rows-4 fixed;
+
+}
+
+.tool {
+  @apply text-2xl grid grid-rows-1 grid-cols-12;
+}
+
+.tool li {
+  float: left;
+}
+
+.tool label {
+  @apply border-x-8 border-t-0 border-b-8 border-transparent;
+}
+
+.container {
+  @apply grid col-start-2 col-span-2 row-start-2 row-span-2 bg-transparent border-8 border-transparent overflow-auto;
+}
+
+.catalog {
+  @apply grid grid-cols-4 grid-rows-4 gap-2;
+}
+
+.catalogItem {
+  @apply rounded text-3xl;
+}
+
+.catalogIndex {
+  @apply bg-gray-200 bg-opacity-10 flex justify-center items-center text-center;
+}
+
+.catalogGood {
+  @apply bg-green-300 cursor-pointer hover:bg-green-700 bg-opacity-75 hover:bg-opacity-75;
+}
+
+.catalogOK {
+  @apply bg-yellow-200 cursor-pointer hover:bg-yellow-400 bg-opacity-75 hover:bg-opacity-75;
+}
+
+.catalogBad {
+  @apply bg-red-300 cursor-pointer hover:bg-red-400 bg-opacity-75 hover:bg-opacity-75;
+}
+
+.catalogItem > a {
+  @apply h-full w-full flex justify-center items-center text-center;
+}
+
+.title {
+  @apply col-start-1 col-span-1 row-start-1 row-span-1 text-2xl flex justify-center items-center text-center -ml-20 mt-4;
+}
+
+.imgItem {
+  @apply hover:bg-opacity-75 hover:bg-gray-500 rounded-lg border-x-8 border-t-0 border-b-8 border-transparent flex justify-center items-center cursor-pointer
+}
+
+.imgCatalog {
+  @apply  overflow-x-hidden overflow-y-auto hidden hover:grid h-72 w-80;
+}
+
+
+.checkHighlight:checked + .highlight{
+  @apply bg-red-500 bg-opacity-75 hover:bg-opacity-75 hover:bg-red-800 blur-2xl;
+}
+
+
+
+.sidebar {
+  @apply w-screen h-16 fixed top-4 left-0;
+}
+
+.toolItem {
+  @apply hover:bg-opacity-75 hover:bg-gray-500 rounded-lg border-x-8 border-t-0 border-b-8 border-transparent flex justify-center items-center cursor-pointer;
+}
+
+.checkHighlight:checked + .labelShown {
+  @apply text-red-300;
+}
+
+/* .imgLabel:hover + .imgCatalog {
+  @apply grid;
+} */
+
+.imgCatalogTitle {
+  @apply fixed justify-center items-center bg-black bg-opacity-90 w-80 h-8 hidden;
+}
+
+.barMenu {
+  @apply hidden;
+}
+
+.sizebarLabel {
+  @apply fixed 
+}
+
+.imgDiv {
+  @apply w-full overflow-hidden col-start-2 col-span-2 row-start-2 row-span-2 ;
+}
+
+.img {
+  @apply top-0 left-0 right-0 bottom-0 m-auto absolute max-w-full max-h-full;
 }
 
 .description {
@@ -39,12 +140,12 @@
   font-family: var(--font-mono);
 }
 
-.grid {
+/* .grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(25%, auto));
   width: var(--max-width);
   max-width: 100%;
-}
+} */
 
 .card {
   padding: 1rem 1.2rem;
